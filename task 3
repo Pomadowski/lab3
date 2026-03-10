@@ -1,0 +1,45 @@
+#include <cstdio>
+#include <cstdlib>
+#include <iostream>
+#include <stdio.h>
+
+
+int numbers[10];
+double doubles[10];
+char symbols[10];
+
+
+int numbersSize = 0;
+int doublesSize = 0;
+int symbolsSize = 0;
+
+
+int main(){
+	
+	numbersSize = sizeof(numbers);
+	doublesSize = sizeof(doubles);
+	symbolsSize = sizeof(symbols);
+	
+	printf("numbers array size: %d \n", numbersSize);
+	numbersSize=numbersSize/10;
+	printf("single int size: %d \n", numbersSize);
+	
+	printf("doubles array size: %d \n", doublesSize);
+	doublesSize=doublesSize/10;
+	printf("single double size: %d \n", doublesSize);
+	
+	printf("symbols array size: %d \n", symbolsSize);
+	symbolsSize=symbolsSize/10;
+	printf("single char size: %d \n", symbolsSize);
+	
+	 numbersSize = sizeof(numbers) /sizeof(numbers[0]);
+	 doublesSize = sizeof(doubles) /sizeof(doubles[0]);
+	 symbolsSize = sizeof(symbols) /sizeof(symbols[0]);
+	 
+	 printf("number of elements in each array: %d, %d, %d \n",numbersSize,doublesSize,symbolsSize);
+	
+	
+	return 0;
+	
+	
+}
