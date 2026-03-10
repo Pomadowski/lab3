@@ -1,0 +1,51 @@
+#include <cstdio>
+#include <cstdlib>
+#include <iostream>
+#include <stdio.h>
+
+int userInput = 0;
+
+struct  Thermacouple{
+ int id;
+ double voltage;
+ bool active;
+} ;
+struct  MightyFoot{
+ int id;
+ bool engaged;
+ string Quote;
+} ;
+struct  DeadMansHand{
+ int id;
+ bool GreatLeaderAlive;
+ bool LaunchingNukes;
+} ;
+
+
+int main(){
+	int sensorSelect = 0;
+	Thermacouple.id=0;
+	MightyFoot.id=1;
+	DeadMansHand.id=2;
+	Thermacouple.voltage = 21.37
+	Thermacouple.active = true
+	MightyFoot.engaged = true;
+	MightyFoot.Quote = "Hail to the King baby!";
+	DeadMansHand.GreatLeaderAlive = false;
+	DeadMansHand.LaunchingNukes = true;
+	
+	printf("select sensor ID: \n");
+	std::cin >> sensorSelect;
+		if(sensorSelect == 0){
+			printf("Thermacouple \n Voltage: %f \n Active: %d ", Thermacouple.voltage, Thermacouple.active)
+			
+		}
+		else if(sensorSelect == 0)
+		
+		
+	}
+	
+	
+	
+	
+}
