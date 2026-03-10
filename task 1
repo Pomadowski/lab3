@@ -1,0 +1,101 @@
+#include <cstdio>
+#include <cstdlib>
+#include <iostream>
+#include <stdio.h>
+
+int runCountMonitor = 0;
+double temperatures[10];
+
+
+double maxValueTwo(double a, double b);
+double maxValueTwo(double a, double b){
+	runCountMonitor++;
+	if(a >= b){
+		return a;
+	}
+	return b;
+}
+
+double minValueTwo(double a, double b);
+double minValueTwo(double a, double b){
+	runCountMonitor++;
+	if(a >= b){
+		return b;
+	}
+	return a;
+}
+
+double maxValueTen(double a, double b, double c, double d, double e, double f, double g, double h, double i, double j);
+double maxValueTen(double a, double b, double c, double d, double e, double f, double g, double h, double i, double j){
+	a = maxValueTwo(a, b);
+	c = maxValueTwo(c, d);
+	e = maxValueTwo(e, f);
+	g = maxValueTwo(g, h);
+	i = maxValueTwo(i, j);
+	
+	a = maxValueTwo(a, c);
+	e = maxValueTwo(e, g);
+	
+	a = maxValueTwo(a, e);
+	
+	a = maxValueTwo(a, i);
+	
+	return a;
+
+}
+
+double minValueTen(double a, double b, double c, double d, double e, double f, double g, double h, double i, double j);
+double minValueTen(double a, double b, double c, double d, double e, double f, double g, double h, double i, double j){
+	a = minValueTwo(a, b);
+	c = minValueTwo(c, d);
+	e = minValueTwo(e, f);
+	g = minValueTwo(g, h);
+	i = minValueTwo(i, j);
+	
+	a = minValueTwo(a, c);
+	e = minValueTwo(e, g);
+	
+	a = minValueTwo(a, e);
+	
+	a = minValueTwo(a, i);
+	
+	return a;
+
+}
+
+int main(){
+	double maxTemperature = 0;
+	double minTemperature = 0;
+	double sumTemperature = 0;
+	double avgTemperature = 0;
+	double userInput = 0;
+	for(int i=0; i < 10; i++){
+		std::cin >> userInput;
+		temperatures[i] = userInput;
+	}
+	for (int i=0;i < 10;i++) {
+    printf("%lf\n",temperatures[i]);
+}
+
+maxTemperature=maxValueTen(temperatures[0],temperatures[1],temperatures[2],temperatures[3],temperatures[4],temperatures[5],temperatures[6],temperatures[7],temperatures[8],temperatures[9]);
+minTemperature=minValueTen(temperatures[0],temperatures[1],temperatures[2],temperatures[3],temperatures[4],temperatures[5],temperatures[6],temperatures[7],temperatures[8],temperatures[9]);
+
+for(int i=0;i < (sizeof (temperatures) );i++){
+	sumTemperature = sumTemperature + temperatures[i];
+}
+avgTemperature = sumTemperature/10;
+
+printf("max temperature: %f \n min temperature: %f \n average temperature: %f \n", maxTemperature, minTemperature, avgTemperature);
+
+
+
+
+return 0;
+
+
+	
+	
+	
+	
+	
+}
